@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Yulia's Stechuhr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stechuhr">
+    <meta name="author" content="Yulia">
+    
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <h1 class="text-center">Hallo, Yulia</h1>
+      <h2 class="text-center">Schon wieder Lust auf Arbeit? :)</h2>
+      </br>
+      <h3 class="text-center text-info">Womit willst du dich beschäftigen?</h3>
+      <div class="row-fluid">
+        <input class="span4 offset4" type="text">
+      </div>
+      </br>
+      </br>
+      <p class="text-center">
+        <a class="btn btn-large btn-success" href="#"><i class="icon-play"></i> Start</a>
+        <a class="btn btn-large btn-warning" href="#"><i class="icon-pause"></i> Pause</a>
+        <a class="btn btn-large btn-danger" href="#"><i class="icon-stop"></i> Stop</a>
+      </p>
+      </br>
+      </br>
+      <p class="text-center">Was habe ich diese Woche schon gemacht?</p>
+      <div class="row-fluid">
+        <table class="span8 offset3 table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>Am</th>
+              <th>Von</th>
+              <th>Bis</th>
+              <th>Wieviel</th>
+              <th>Was</th>
+            </tr>
+          </thead>
+          <tbody data-bind="foreach: arbeit">
+            <tr>
+              <td data-bind="text: data().date"></td>
+              <td data-bind="text: data().von"></td>
+              <td data-bind="text: data().bis"></td>
+              <td data-bind="text: data().wieviel"></td>
+              <td data-bind="text: data().was"></td>
+            </tr>    
+          </tbody>
+        </table>
+      </div>
+
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/jquery-1.9.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="js/knockout-2.2.1.js"></script>
+		<script src="js/tabelle.js"></script>
+
+  </body>
+</html>
