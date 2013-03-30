@@ -24,16 +24,19 @@
       <h2 class="text-center">Schon wieder Lust auf Arbeit? :)</h2>
       </br>
       <h3 class="text-center text-info">Womit willst du dich beschäftigen?</h3>
-      <div class="row-fluid">
-        <input class="span4 offset4" type="text">
-      </div>
+			<form data-bind="submit: addToTable">
+				<div class="row-fluid">
+					<input class="span4 offset4" data-bind="value: beschaeftigung" type="text">
+				</div>
       </br>
       </br>
       <p class="text-center">
-        <a class="btn btn-large btn-success" href="#"><i class="icon-play"></i> Start</a>
-        <a class="btn btn-large btn-warning" href="#"><i class="icon-pause"></i> Pause</a>
-        <a class="btn btn-large btn-danger" href="#"><i class="icon-stop"></i> Stop</a>
+        <button class="btn btn-large btn-success" href="#"><i class="icon-play"></i> Start</button>
+        <button class="btn btn-large btn-warning" ><i class="icon-pause"></i> Pause</button>
+        <button class="btn btn-large btn-danger" type ="submit"><i class="icon-stop"></i> Stop</button>
       </p>
+</form>
+
       </br>
       </br>
       <p class="text-center">Was habe ich diese Woche schon gemacht?</p>
@@ -48,13 +51,13 @@
               <th>Was</th>
             </tr>
           </thead>
-          <tbody data-bind="foreach: arbeit">
+          <tbody data-bind="foreach: arbeitsListe">
             <tr>
-              <td data-bind="text: data().date"></td>
-              <td data-bind="text: data().von"></td>
-              <td data-bind="text: data().bis"></td>
-              <td data-bind="text: data().wieviel"></td>
-              <td data-bind="text: data().was"></td>
+              <td data-bind="value: date"></td>
+							<td data-bind="value: von"></td>
+							<td data-bind="value: bis"></td>
+							<td data-bind="value: wieviel"></td>
+							<td data-bind="value: was"></td>
             </tr>    
           </tbody>
         </table>
