@@ -13,6 +13,10 @@
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
+      
+      .container {
+        text-align: center;
+      }
     </style>
     <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
   </head>
@@ -20,48 +24,42 @@
   <body>
 
     <div class="container">
-      <h1 class="text-center">Hallo, Yulia</h1>
-      <h2 class="text-center">Schon wieder Lust auf Arbeit? :)</h2>
+      <h1>Hallo, Yulia</h1>
+      <h2>Schon wieder Lust auf Arbeit? :)</h2>
       </br>
-      <h3 class="text-center text-info">Womit willst du dich beschäftigen?</h3>
+      <h3 class="text-info">Womit willst du dich beschäftigen?</h3>
 			<form data-bind="submit: addToTable">
-				<div class="row-fluid">
-					<input class="span4 offset4" data-bind="value: beschaeftigung" type="text">
-				</div>
-      </br>
-      </br>
-      <p class="text-center">
-        <button class="btn btn-large btn-success" href="#"><i class="icon-play"></i> Start</button>
-        <button class="btn btn-large btn-warning" ><i class="icon-pause"></i> Pause</button>
-        <button class="btn btn-large btn-danger" type ="submit"><i class="icon-stop"></i> Stop</button>
-      </p>
-</form>
+			  <input data-bind="value: beschaeftigung" placeholder="What needs to be done?" />
+        </br>
+        </br>
+        <button class="btn btn-large btn-success"><i class="icon-play"></i> Start</button>
+        <button class="btn btn-large btn-warning"><i class="icon-pause"></i> Pause</button>
+        <button class="btn btn-large btn-danger" type="submit"><i class="icon-stop"></i> Stop</button>
+      </form>
 
       </br>
       </br>
-      <p class="text-center">Was habe ich diese Woche schon gemacht?</p>
-      <div class="row-fluid">
-        <table class="span8 offset3 table table-hover table-striped">
-          <thead>
-            <tr>
-              <th>Am</th>
-              <th>Von</th>
-              <th>Bis</th>
-              <th>Wieviel</th>
-              <th>Was</th>
-            </tr>
-          </thead>
-          <tbody data-bind="foreach: arbeitsListe">
-            <tr>
-              <td data-bind="value: date"></td>
-							<td data-bind="value: von"></td>
-							<td data-bind="value: bis"></td>
-							<td data-bind="value: wieviel"></td>
-							<td data-bind="value: was"></td>
-            </tr>    
-          </tbody>
-        </table>
-      </div>
+      <p>Was habe ich diese Woche schon gemacht?</p>
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Am</th>
+            <th>Von</th>
+            <th>Bis</th>
+            <th>Wieviel</th>
+            <th>Was</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: arbeitsListe">
+          <tr>
+            <td data-bind="text: date"></td>
+            <td data-bind="text: von"></td>
+            <td data-bind="text: bis"></td>
+            <td data-bind="text: wieviel"></td>
+            <td data-bind="text: was"></td>
+          </tr>    
+        </tbody>
+      </table>
 
 
     </div> <!-- /container -->
