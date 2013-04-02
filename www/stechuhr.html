@@ -28,19 +28,26 @@
       <h2>Schon wieder Lust auf Arbeit? :)</h2>
       </br>
       <h3 class="text-info">Womit willst du dich beschäftigen?</h3>
-			<form data-bind="submit: addToTable">
+      
+			
 			  <input data-bind="value: beschaeftigung" placeholder="What needs to be done?" />
         </br>
         </br>
-        <button class="btn btn-large btn-success"><i class="icon-play"></i> Start</button>
-        <button class="btn btn-large btn-warning"><i class="icon-pause"></i> Pause</button>
-        <button class="btn btn-large btn-danger" type="submit"><i class="icon-stop"></i> Stop</button>
-      </form>
+        <div class="row-fluid">
+          <button class="btn btn-success span2 offset3" ><i class="icon-play"></i> Start</button>
+          <form data-bind="submit: oldAddToTable" class="span2">
+            <button class="btn btn-warning span12"><i class="icon-pause"></i> Pause</button>
+          </form>
+          <form data-bind="submit: newAddToTable" class="span2">
+            <button class="btn btn-danger span12"><i class="icon-stop"></i> Stop</button>
+          </form>
+        </div>
 
       </br>
       </br>
+      </br>
       <p>Was habe ich diese Woche schon gemacht?</p>
-      <table class="table table-hover table-striped">
+      <table class="table table-hover table-striped offset3 span6">
         <thead>
           <tr>
             <th>Am</th>

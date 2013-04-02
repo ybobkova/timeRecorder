@@ -1,10 +1,10 @@
-function ArbeitBeendet(data) {
+function ArbeitBeendet(date, von, bis, wieviel, was) {
 	var self = this;
-  self.date = ko.observable(data.date);
-	self.von = ko.observable(data.von);
-	self.bis = ko.observable(data.bis);
-	self.wieviel = ko.observable(data.wieviel);
-	self.was = ko.observable(data.was);
+  self.date = date;
+	self.von = von;
+	self.bis = bis;
+	self.wieviel = wieviel;
+	self.was = was;
 }
 
 function ArbeitViewModel() {
@@ -12,9 +12,13 @@ function ArbeitViewModel() {
   self.arbeitsListe = ko.observableArray([]);
 	self.beschaeftigung = ko.observable();
 	
-	self.addToTable = function() {
-		self.arbeitsListe.push(new ArbeitBeendet("", "", "", "", "Kuku"));
+	self.newAddToTable = function() {
+		self.arbeitsListe.push(new ArbeitBeendet("", "", "", "", this.beschaeftigung()));
     self.beschaeftigung("");
+  };
+  
+  self.oldAddToTable = function() {
+		self.arbeitsListe.push(new ArbeitBeendet("", "", "", "", this.beschaeftigung()));
   };
 }
 
