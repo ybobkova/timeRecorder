@@ -1,0 +1,1 @@
+window.timeRecorder = Ember.Application.create();
